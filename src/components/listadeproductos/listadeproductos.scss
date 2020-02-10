@@ -1,0 +1,12 @@
+.lista-contenedorgeneral{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; 
+    width: 95%;
+    height: 600px;
+}
+
+button{
+    margin-left: 15px;
+}
