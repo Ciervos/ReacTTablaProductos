@@ -41,7 +41,7 @@ const Listadeproductos = props =>{
     
         return(
     <div className="lista-contenedorgeneral">
-        <div><input id="inputprincipal" type="text"></input>
+        <div><input id="inputprincipal" type="text" placeholder="ID,Nombre,Precio."></input>
         <button type="submit" onClick={agregarLista}>Agregar</button>
         <button type="submit">Modificar</button>
         <button type="submit" onClick={eliminarLista}>Eliminar</button></div>
