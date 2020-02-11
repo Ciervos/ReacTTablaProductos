@@ -30,12 +30,8 @@ const Listadeproductos = props =>{
         let inputcont = document.querySelector("#inputprincipal").value;    
         inputcont = inputcont.split(",");
         let targetid =  inputcont[0];
-
-        for(let i=0;maindata.length<i;i++){
-            if(maindata[i][0]==targetid){
-                setMaindata(maindata.splice(i,1));
-            }
-        }
+        setMaindata(maindata => maindata.filter(item => item.id !== targetid));
+    
     }
 
 
