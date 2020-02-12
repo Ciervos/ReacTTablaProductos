@@ -4,11 +4,7 @@ import './listadeproductos.scss';
 
 const Listadeproductos = props =>{
  
-    const[maindata,setMaindata] = useState([{
-        id: 0,
-        name: "Pijama",
-        precio: "40.00"
-    }]);
+    const[maindata,setMaindata] = useState([]);
     
     const [id, setId] = useState();
     const [name, setName] = useState();
@@ -47,7 +43,6 @@ const Listadeproductos = props =>{
     }
 
     const eliminarLista = () =>{
-        console.log("me ejecuto -eliminarLista");
         /*let inputcont = document.querySelector("#inputprincipal").value;    
         inputcont = inputcont.split(",");
         let targetid =  inputcont[0];*/
@@ -59,19 +54,33 @@ const Listadeproductos = props =>{
         setMaindata(maindata => maindata.filter(item => item.precio !== targetprecio));*/  
     }
 
+    const modLista = () =>{
+       let reemplazo = {
+        id,
+        name,
+        precio,
+    }    
+    
+    const lista = [...maindata];
+    const index = lista.findIndex(maindata => maindata.id == id);
+    lista.splice(index,1,reemplazo);
 
-     useEffect(() => {
+     setMaindata(lista)
+    }
+
+
+     /*useEffect(() => {
         console.log("Se ejecuta useEffect");
-    }, [maindata]);
+    }, [maindata]);*/
     
         return(
     <div className="lista-contenedorgeneral">
-        <div><div className="input-contenedor"><input id="inputprincipal" onChange={getId} type="text" placeholder="ID"></input>
-        <input id="inputprincipal" type="text" onChange={getName} placeholder="Nombre"></input>
-        <input id="inputprincipal" type="text" onChange={getPrecio} placeholder="Precio"></input></div>
-        <button type="submit" onClick={agregarLista}>Agregar</button>
-        <button type="submit">Modificar</button>
-        <button type="submit" onClick={eliminarLista}>Eliminar</button></div>
+        <div><div className="input-contenedor"><input className="inputprincipal" onChange={getId} type="text" placeholder="ID"></input>
+        <input className="inputprincipal" type="text" onChange={getName} placeholder="Nombre"></input>
+        <input className="inputprincipal" type="text" onChange={getPrecio} placeholder="Precio"></input></div>
+        <button id="add" type="submit" onClick={agregarLista}>Agregar</button>
+        <button id="edit" type="submit" onClick={modLista}>Modificar</button>
+        <button id="delete"type="submit" onClick={eliminarLista}>Eliminar</button></div>
         <Tablalista maindata={maindata}></Tablalista>
     </div>
         );

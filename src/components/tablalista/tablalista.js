@@ -7,16 +7,17 @@ const Tablalista = ({maindata, ...props}) =>{
         return(
     <div className="tabla-contenedorgeneral">
         <table>
+          <thead>
         <tr className="tabla-columnacabeza">
           <th>Id</th>
           <th>Producto</th>
           <th>Precio</th>
         </tr>
-        
+        </thead>
       
         {maindata.map(item=>{
           return(
-          <tr>
+          <tr key={item.id}>
           <td>{item.id}</td>
           <td>{item.name}</td>
           <td>{`$${item.precio}`}</td>

@@ -1,13 +1,16 @@
 .tabla-contenedorgeneral{
 border: 2px solid #daa520;
 margin-top: 15px;
-width: 395px;
-padding-left: 20px; 
+
 
 tr{
     
     height: 40px;
 
+}
+
+th{
+    width: 75px;
 }
 .tabla-columnacabeza{
     background-color: khaki;

@@ -8,11 +8,37 @@
 }
 
 button{
+
+    border: 0;
+    color: white;
     margin-left: 15px;
+    margin-top: 10px;
+    height: 30px;
+    width: 70px;
+
+   
 }
+#add{
+    background-color: #06A77D;
+   }
+#edit{
+    background-color: #005377;
+}   
+
+#delete{
+    background-color: crimson;
+}
+
 
 .input-contenedor{
     display: flex;
     flex-direction: column;
     padding-left: 15px;
+}
+
+.inputprincipal{
+
+    &:focus{
+    background-color: #F1A208;
+    }
 }
