@@ -10,7 +10,7 @@ const Tablalista = ({maindata, ...props}) =>{
           <thead>
         <tr className="tabla-columnacabeza">
           <th>Id</th>
-          <th>Producto</th>
+          <th className="casillaproducto">Producto</th>
           <th>Precio</th>
         </tr>
         </thead>
